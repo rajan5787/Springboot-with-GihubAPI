@@ -1,0 +1,90 @@
+22:03:05.198 request:
+1 > GET http://localhost:8080/users/zeroFollowers
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:03:05.869 response time in milliseconds: 667.96
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:33:05 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":[{"id":44,"login":"errfree","html_url":"https://github.com/errfree"}],"errorMessage":null}
+
+22:03:05.905 request:
+1 > GET http://localhost:8080/users/zeroFollowers?count=5
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:03:06.529 response time in milliseconds: 623.10
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:33:05 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":[{"id":44,"login":"errfree","html_url":"https://github.com/errfree"},{"id":81,"login":"engineyard","html_url":"https://github.com/engineyard"},{"id":119,"login":"ministrycentered","html_url":"https://github.com/ministrycentered"},{"id":128,"login":"collectiveidea","html_url":"https://github.com/collectiveidea"},{"id":144,"login":"ogc","html_url":"https://github.com/ogc"}],"errorMessage":null}
+
+22:03:06.548 request:
+1 > GET http://localhost:8080/users/zeroFollowers?count=-1
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:03:06.555 response time in milliseconds: 6.53
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:33:05 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":null,"errorMessage":"Count value is less than 1"}
+
+sage":null}
+
+22:01:07.521 request:
+1 > GET http://localhost:8080/repositories/hottest?count=0
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:01:07.530 response time in milliseconds: 7.71
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:31:06 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":null,"errorMessage":"Count value is less than 1"}
+

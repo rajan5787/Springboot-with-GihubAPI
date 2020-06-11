@@ -1,0 +1,95 @@
+22:04:34.041 request:
+1 > GET http://localhost:8080/actuator/health
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:04:34.088 response time in milliseconds: 42.93
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/vnd.spring-boot.actuator.v3+json
+1 < Date: Thu, 11 Jun 2020 16:34:34 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"status":"UP"}
+
+22:04:34.228 request:
+1 > GET http://localhost:8080/users/zeroFollowers
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:04:34.946 response time in milliseconds: 717.28
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:34:34 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":[{"id":44,"login":"errfree","html_url":"https://github.com/errfree"}],"errorMessage":null}
+
+22:04:34.974 request:
+1 > GET http://localhost:8080/users/zeroFollowers?count=5
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:04:35.617 response time in milliseconds: 642.84
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:34:35 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":[{"id":44,"login":"errfree","html_url":"https://github.com/errfree"},{"id":81,"login":"engineyard","html_url":"https://github.com/engineyard"},{"id":119,"login":"ministrycentered","html_url":"https://github.com/ministrycentered"},{"id":128,"login":"collectiveidea","html_url":"https://github.com/collectiveidea"},{"id":144,"login":"ogc","html_url":"https://github.com/ogc"}],"errorMessage":null}
+
+22:04:35.639 request:
+1 > GET http://localhost:8080/users/zeroFollowers?count=-1
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+
+22:04:35.643 response time in milliseconds: 4.01
+1 < 200
+1 < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+1 < Connection: keep-alive
+1 < Content-Type: application/json
+1 < Date: Thu, 11 Jun 2020 16:34:35 GMT
+1 < Expires: 0
+1 < Keep-Alive: timeout=60
+1 < Pragma: no-cache
+1 < Transfer-Encoding: chunked
+1 < X-Content-Type-Options: nosniff
+1 < X-Frame-Options: DENY
+1 < X-XSS-Protection: 1; mode=block
+{"items":null,"errorMessage":"Count value is less than 1"}
+
+22:04:35.720 request:
+1 > GET http://localhost:8080/repositories/hottest
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: localhost:8080
+1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_151)
+

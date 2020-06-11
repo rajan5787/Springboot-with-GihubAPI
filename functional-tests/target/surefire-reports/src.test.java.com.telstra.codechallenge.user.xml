@@ -1,0 +1,52 @@
+<testsuite failures="0" name="src/test/java/com/telstra/codechallenge/user.feature" skipped="0" tests="3" time="1.774406">
+  <testcase classname="src.test.java.com.telstra.codechallenge.user" name="Get User with zero followers" time="1.123679">
+    <system-out>Given url microserviceUrl ................................................. passed
+And path '/users/zeroFollowers' ........................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+* def userSchema = { html_url : '#string', id : '#number',  login : '#string' } . passed
+And match response.items == '#[] userSchema' .............................. passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.com.telstra.codechallenge.user" name="Get 5 User with zero followers" time="0.635092">
+    <system-out>Given url microserviceUrl ................................................. passed
+And path '/users/zeroFollowers' ........................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+* def userSchema = { html_url : '#string', id : '#number',  login : '#string' } . passed
+And match response.items == '#[] userSchema' .............................. passed
+Given url microserviceUrl ................................................. passed
+And path '/users/zeroFollowers' ........................................... passed
+And param count = 5 ....................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+* def userSchema = { html_url : '#string', id : '#number',  login : '#string' } . passed
+And match response.items == '#[] userSchema' .............................. passed</system-out>
+  </testcase>
+  <testcase classname="src.test.java.com.telstra.codechallenge.user" name="Get -1 User with zero followers" time="0.015634">
+    <system-out>Given url microserviceUrl ................................................. passed
+And path '/users/zeroFollowers' ........................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+* def userSchema = { html_url : '#string', id : '#number',  login : '#string' } . passed
+And match response.items == '#[] userSchema' .............................. passed
+Given url microserviceUrl ................................................. passed
+And path '/users/zeroFollowers' ........................................... passed
+And param count = 5 ....................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+* def userSchema = { html_url : '#string', id : '#number',  login : '#string' } . passed
+And match response.items == '#[] userSchema' .............................. passed
+Given url microserviceUrl ................................................. passed
+And path '/users/zeroFollowers' ........................................... passed
+And param count = -1 ...................................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match header Content-Type contains 'application/json' ................. passed
+And match response.errorMessage == 'Count value is less than 1' ........... passed</system-out>
+  </testcase>
+</testsuite>
