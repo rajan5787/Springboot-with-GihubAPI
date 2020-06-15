@@ -1,0 +1,139 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UserService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.telstra.codechallenge.service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UserService (com.telstra.codechallenge.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserService</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (4/ 7)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">UserService$$EnhancerBySpringCGLIB$$99c8389b</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (4/ 7)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.telstra.codechallenge.service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+<i>4</i>&nbsp;import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+<i>5</i>&nbsp;import com.telstra.codechallenge.model.UserResponse;
+<i>6</i>&nbsp;import org.slf4j.Logger;
+<i>7</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>8</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>9</i>&nbsp;import org.springframework.beans.factory.annotation.Value;
+<i>10</i>&nbsp;import org.springframework.stereotype.Service;
+<i>11</i>&nbsp;import org.springframework.web.client.RestTemplate;
+<b class="fc"><i>12</i>&nbsp;</b>
+<i>13</i>&nbsp;@Service
+<i>14</i>&nbsp;public class UserService {
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    @Value(&quot;${github.base.url}&quot;)
+<i>19</i>&nbsp;    private String gitHubBaseUrl;
+<i>20</i>&nbsp;    @Autowired
+<i>21</i>&nbsp;    private RestTemplate restTemplate;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    @HystrixCommand(fallbackMethod = &quot;fallBack&quot;, commandProperties = {
+<i>24</i>&nbsp;            @HystrixProperty(name = &quot;execution.isolation.thread.timeoutInMilliseconds&quot;, value = &quot;30000&quot;),
+<b class="fc"><i>25</i>&nbsp;            @HystrixProperty(name = &quot;circuitBreaker.requestVolumeThreshold&quot;, value = &quot;10&quot;),</b>
+<b class="fc"><i>26</i>&nbsp;            @HystrixProperty(name = &quot;circuitBreaker.sleepWindowInMilliseconds&quot;, value = &quot;10000&quot;) })</b>
+<i>27</i>&nbsp;    public UserResponse getUserWithZeroFollowers(int count) {
+<b class="fc"><i>28</i>&nbsp;        logger.info(&quot;Inside getHottestRepositories method, count value : &quot;+count);</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;        String post_url = &quot;/users?q=followers:0&amp;sort=joined&amp;order=asc&amp;per_page=&quot;+count;
+<i>31</i>&nbsp;        UserResponse userResponse = restTemplate.getForObject(gitHubBaseUrl + post_url, UserResponse.class);
+<i>32</i>&nbsp;        logger.info(&quot;Inside getUserWithZeroFollowers method, response : &quot; + userResponse.toString());
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;        return userResponse;</b>
+<b class="nc"><i>35</i>&nbsp;    }</b>
+<b class="nc"><i>36</i>&nbsp;</b>
+<i>37</i>&nbsp;    @SuppressWarnings(&quot;unused&quot;)
+<i>38</i>&nbsp;    public UserResponse fallBack(int count){
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;        UserResponse response = new UserResponse();
+<i>41</i>&nbsp;        response.setErrorMessage(&quot;SERVER IS DOWN. Please try after sometime&quot;);
+<i>42</i>&nbsp;        logger.error(&quot;Servver is down&quot;);
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;        return response;
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-15 15:36</div>
+</div>
+</body>
+</html>

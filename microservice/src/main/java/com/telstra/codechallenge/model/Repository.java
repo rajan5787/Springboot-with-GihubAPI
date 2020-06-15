@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Repository {
 

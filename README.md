@@ -11,23 +11,6 @@ This is a multi module maven project with two modules:
 - The `micoservice` module produces a spring boot application.
 - The `functional-tests` is used to run functional tests using the [karate](https://github.com/intuit/karate) library.
 
-## Instructions
-
-Select one of the two exercises below and add the required behaviour to the spring boot application in the microservice module. You can:
-
-- Add libraries you need.
-- Refactor any of the existing code.
-
-You will see that there are already a couple of endpoints in the `microservice` they are fundamentally there to demonstrate the use of the [karate](https://github.com/intuit/karate) library and should not be taken as complete examples.
-
-### Assesment
-
-Your submission will be judge along the following criterea.
-
-- The solution works.
-- The solution is maintainable.
-- The solution is tested.
-- The solution is appropriate.
 
 ## The Exercises
 
@@ -62,3 +45,11 @@ The following fields should be returned:
       html_url
 
 [1]: http://developer.github.com/v3/search/#search-repositories
+
+APIs : 
+
+To get Repository : http://localhost:8080/repositories/hottest?count=2
+To get User : http://localhost:8080/users/zeroFollowers?count=2
+
+You can access the report from below path : 
+file:///Users/rajanpipaliya/Downloads/c967784-spring-boot-coding-exercise-f54741b9143b/coverage%20report/index.html
